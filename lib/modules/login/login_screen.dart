@@ -28,7 +28,6 @@ class LoginScreen extends StatelessWidget {
             navigateAndFinish(context, const Welcome());
             // snackBar Widget
 
-
             // if (state.loginModel.status != null) {
             //
             //   print(state.loginModel.message);
@@ -55,7 +54,7 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                     Lottie.asset('assets/22.json'),
+                    Lottie.asset('assets/22.json'),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 10),
                       child: Text(
@@ -112,14 +111,7 @@ class LoginScreen extends StatelessWidget {
                                   }
                                   return null;
                                 },
-                                onSubmit: (value) {
-                                  ///todo مهم
-                                  // if (formKey.currentState!.validate()) {
-                                  //   LoginCubit.get(context).userLogin(
-                                  //       email: emailController.text,
-                                  //       password: passwordController.text);
-                                  // }
-                                },
+                                onSubmit: (value) {},
                                 txt: AppLocalization.of(context)!
                                     .translate('secret_code')!,
                                 isClikable: true,
@@ -150,26 +142,28 @@ class LoginScreen extends StatelessWidget {
                               padding: const EdgeInsets.symmetric(vertical: 20),
                               child: BlocConsumer<LoginCubit, LoginState>(
                                 listener: (context, state) {
-                                  if(state is   LoginSuccessState){
-                                    navigateAndFinish(
-                                      context, const Welcome());
+                                  if (state is LoginSuccessState) {
+                                    navigateAndFinish(context, const Welcome());
                                   }
-                                  if(state is   LoginErrorState){
+                                  if (state is LoginErrorState) {
                                     print("stateeeeee${state.error}");
-                                    // ScaffoldMessenger.of(context).showSnackBar(
-                                    //   const SnackBar(
-                                    //     content: Text("errrrrrrrrrrrror"),
-                                    //     duration: Duration(seconds: 2),
-                                    //   ),
-                                    // );
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        duration: const Duration(seconds: 2),
+                                        content: Text(
+                                          state.error.toString(),
+                                          style: const TextStyle(
+                                              color: Colors.white),
+                                        ),
+                                        backgroundColor: Colors.red,
+                                      ),
+                                    );
                                   }
-
-                                  },
-
+                                },
                                 builder: (context, state) {
                                   return ConditionalBuilder(
                                     condition: state is! LoginLoadingState,
-                                     builder: (context) => DefaultButton(
+                                    builder: (context) => DefaultButton(
                                       onTap: () {
                                         if (formKey.currentState!.validate()) {
                                           LoginCubit.get(context).userLogin(
