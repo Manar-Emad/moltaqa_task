@@ -1,0 +1,11 @@
+{
+  "welcome_back" : "مرحبا بعودتك !",
+  "sign_in" : "تسجيل الدخول",
+  "mobile_number_or_email" :"رقم الجوال او البريد الالكتروني",
+  "secret_code" : "الرمز السري",
+  "forget_the_passcode" : "نسيت الرمز السري؟",
+  "dont_have_an_account" : "لا تمتلك حساب؟",
+  "create_a_new_account" : "انشاء حساب جديد"
+}
+
+

@@ -1,0 +1,9 @@
+{
+  "welcome_back" : "Welcome Back!",
+  "sign_in" : "Sign in",
+  "mobile_number_or_email" : "Mobile number or e-mail",
+  "secret_code" : "secret code",
+  "forget_the_passcode" : "Forget the passcode?",
+  "dont_have_an_account" : "Don'\t have an account",
+  "create_a_new_account" : "Create a new account"
+}
