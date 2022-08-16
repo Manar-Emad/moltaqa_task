@@ -169,7 +169,7 @@ class LoginScreen extends StatelessWidget {
                                 builder: (context, state) {
                                   return ConditionalBuilder(
                                     condition: state is! LoginLoadingState,
-                                    builder: (context) => DefaultButton(
+                                     builder: (context) => DefaultButton(
                                       onTap: () {
                                         if (formKey.currentState!.validate()) {
                                           LoginCubit.get(context).userLogin(
