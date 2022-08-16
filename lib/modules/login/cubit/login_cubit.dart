@@ -32,7 +32,7 @@ void userLogin({required String email,required String password}){
   }
 
   ).catchError((error){
-    emit(LoginErrorState(error.toString()));
+    emit(LoginErrorState(error.response.data["message"].toString()));
   });
 
 }
