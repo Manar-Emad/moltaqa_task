@@ -26,25 +26,6 @@ class LoginScreen extends StatelessWidget {
         listener: (context, state) {
           if (state is LoginSuccessState) {
             navigateAndFinish(context, const Welcome());
-            // snackBar Widget
-
-            // if (state.loginModel.status != null) {
-            //
-            //   print(state.loginModel.message);
-            //   print(state.loginModel.data?.token);
-            //   CacheHelper.saveData(
-            //           key: 'token', value: state.loginModel.data?.token)
-            //       .then((value) {
-            //
-            //   });
-            // } else {
-            //   print(state.loginModel.message);
-            //   snackBar(
-            //     context: context,
-            //     message: state.loginModel.message,
-            //     state: SnackBarStates.ERROR,
-            //   );
-            // }
           }
         },
         builder: (context, state) {
@@ -54,6 +35,7 @@ class LoginScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    sizedBoxh1,
                     Lottie.asset('assets/22.json'),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 10),
